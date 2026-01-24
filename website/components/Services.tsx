@@ -1,26 +1,38 @@
+import Link from "next/link"
+import { InfiniteMovingCardsDemo } from "./ServicesCards";
+
+
+
 export default function Services() {
   return (
-    <section className="bg-black text-white py-20">
-      <div className="flex flex-col items-center text-center gap-6">
+    <section className="bg-black text-white py-20 px-16">
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <h2 className="abouttitletext text-5xl font-extrabold leading-tight">
+            SOLUTION <br />
+            <span className="underline underline-offset-8 text-orange-500">
+              WE DELIVER
+            </span>
 
-        {/* --- HEADING --- */}
-        <h2 className="text-5xl font-extrabold tracking-wide">
-          OUR SERVICES
-        </h2>
+          </h2>
+        </div>
 
-        {/* --- SMALL WHITE LINE UNDER HEADING --- */}
-        <div className="w-40 h-[6px] bg-white rounded-full"></div>
-
-        {/* --- SUBTEXT --- */}
-        <p className="max-w-4xl text-lg leading-relaxed px-4">
-          We focus on technologies and systems that deliver measurable results,
-          helping mining operations improve efficiency, visibility, and
-          decision-making without unnecessary complexity.
-        </p>
+        <div className="flex items-center justify-end text-gray-200">
+          <div className="max-w-sm text-right">
+            <h4 className="abouttext tracking-[0.25em] text-lg font-bold mb-2 uppercase underline underline-offset-8 decoration-white">
+              OUR SERVICES
+            </h4>
+            <p className="abouttext text-md">
+             PMT delivers end-to-end underground mining solutions, acting as an execution and problem-solving partner for both global OEMs and mine owners. Our services are designed around real mining challenges, Indian operating conditions, and measurable underground outcomes.
+            </p>
+          </div>
+        </div>
       </div>
-      <div>
-    
-      </div>
+      
+      <div><InfiniteMovingCardsDemo/></div>
+
+      <div><Link href="/services" className="text-left  underline decoration-white text-xl">View all</Link></div>
+
     </section>
   );
 }
