@@ -39,7 +39,7 @@ export default function Hero() {
             "
           >
             <Link href="/" className="font-semibold">Home</Link>
-            <Link href="/services" className="opacity-90">Services</Link>
+            <Link href="/products" className="opacity-90">Products</Link>
             <Link href="/about" className="opacity-90">About</Link>
             <Link href="/contact" className="opacity-90">Contact Us</Link>
           </nav>
