@@ -58,20 +58,37 @@ const ContactForm = () => {
         />
 </div>
        
-        <button
-          className=" bg-orange-500 hover:bg-orange-600
-                     rounded-full py-2 pl-5 pr-2
-                     flex items-center justify-between
-                     group shadow-md shadow-orange-500/20 gap-3"
-        >
-          <span className="font-bold text-white text-base ml-3 tracking-wide  ">
-            SEND
-          </span>
-          <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center 
-                          group-hover:scale-105 transition-transform">
-            <MoveUpRight className="text-orange-500 w-4 h-4" />
-          </div>
-        </button>
+       <button
+  className="
+    relative bg-orange-500 hover:bg-orange-600
+    rounded-full py-2 px-4
+    flex items-center justify-end
+    group shadow-md shadow-orange-500/20
+    
+  "
+>
+  {/* Centered text */}
+  <span
+    className="
+      absolute left-1/2 -translate-x-1/2
+      font-bold text-white text-base tracking-wide
+    "
+  >
+    SEND
+  </span>
+
+  {/* Right arrow */}
+  <div
+    className="
+      bg-white rounded-full w-8 h-8
+      flex items-center justify-center
+      group-hover:scale-105 transition-transform
+    "
+  >
+    <MoveUpRight className="text-orange-500 w-4 h-4" />
+  </div>
+</button>
+
       </form>
     </div>
 

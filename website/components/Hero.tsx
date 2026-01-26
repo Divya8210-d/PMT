@@ -67,7 +67,7 @@ export default function Hero() {
         </div>
 
         {/* CENTER TEXT */}
-        <div className="flex flex-col pt-12 sm:pt-16 lg:pt-20 max-w-full lg:max-w-3xl">
+        <div className="flex flex-col pt-12 sm:pt-16 lg:pt-20 max-w-full lg:max-w-fit">
           <h1
             className="
               font-extrabold leading-none flex
@@ -89,18 +89,20 @@ export default function Hero() {
           
           {/* LEFT */}
           <div className="flex flex-col gap-3 sm:gap-4">
-            <h3 className="text-lg sm:text-xl font-semibold max-w-[330px]">
+            <h3 className="text-lg sm:text-3xl font-semibold max-w-[530px]">
               Smart Technology for Safer & Smarter Mining Operations
             </h3>
-            <p className="text-xs sm:text-sm max-w-[350px] opacity-90">
+            <p className="text-xs sm:text-lg max-w-[550px] opacity-90">
               From intelligent safety systems to mining technology consulting,
               PMT Bharat enables efficient, compliant, and future-ready operations.
             </p>
-            <button className="bg-orange-500 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold w-fit flex gap-2">
+            <Link href="/services" className="bg-orange-500 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-lg font-semibold w-fit flex gap-2">
               Explore Services
               <Image src="/iconhero.png" alt="icon" width={24} height={24} />
-            </button>
+            </Link>
           </div>
+
+          
 
           {/* CENTER ARROW */}
           <div className="hidden md:flex justify-center">
@@ -133,3 +135,5 @@ function Badge({ text }: { text: string }) {
     </div>
   );
 }
+
+

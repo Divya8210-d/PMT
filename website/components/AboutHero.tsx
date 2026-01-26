@@ -9,7 +9,7 @@ export default function AboutHero() {
     <section className="relative w-full h-screen overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
       <Image
-        src="/hero.jpg"
+        src="/About.png"
         alt="Service Hero Image"
         fill
         priority
@@ -96,10 +96,10 @@ export default function AboutHero() {
           
           {/* LEFT */}
           <div className="flex flex-col gap-3 sm:gap-4">
-            <h3 className="text-xl sm:text-3xl font-semibold max-w-[330px]">
+            <h3 className="text-xl sm:text-4xl font-semibold uppercase max-w-[530px]">
               People Behind the Performance
             </h3>
-            <p className="text-md max-w-[350px] opacity-90">
+            <p className="text-lg max-w-[550px] opacity-90">
               PMT Bharat brings together expertise in mining operations,
               technology, and compliance to deliver results that matter—safely,
               consistently, and at scale.

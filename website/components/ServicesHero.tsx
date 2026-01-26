@@ -9,7 +9,7 @@ export default function ServicesHero() {
     <section className="relative w-full h-screen overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
       <Image
-        src="/hero.jpg"
+        src="/Services.png"
         alt="Service Hero Image"
         fill
         priority

@@ -10,7 +10,7 @@ export default function ContactHero() {
     <section className="relative w-full h-screen overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
       <Image
-        src="/hero.jpg"
+        src="/Contact.png"
         alt="Service Hero Image"
         fill
         priority
@@ -103,9 +103,42 @@ export default function ContactHero() {
           <div />
 
           {/* RIGHT (empty for now) */}
-          <div className="flex flex-col" />
+          <div className="flex flex-col gap-4" >
+             <Badge text="Email" detail="pinnacledepth@gmail.com"/>
+         <Badge text="Phone" detail="+91 6200224594"/>
+          </div>
+        
+         
+
         </div>
       </div>
     </section>
   );
 }
+
+
+
+
+function Badge({ text ,detail }: { text: string ,detail:string }) {
+  return (
+    <div
+      className="
+        bg-black/40 px-4 sm:px-5 py-2 sm:py-3
+        rounded-3xl flex items-center gap-2 sm:gap-3
+        text-xs sm:text-sm max-w-xl
+        backdrop-blur-xs border border-white/30
+      "
+    >
+      <Image src="/star.png" alt="star" width={32} height={32} />
+      <div className="flex flex-col ">
+        <div>{text}</div>
+        <div>{detail}</div>
+        
+        
+      </div>
+      
+    </div>
+  );
+}
+
+
