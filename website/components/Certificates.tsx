@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+interface FeatureCardProps {
+  title: string;
+  text: string;
+}
+
 
 export default function Approvals() {
     
@@ -49,7 +54,7 @@ An underground mining problem-solving partner, not a trading house.
 
 
 
-const FeatureCard = ({ title, text }) => {
+const FeatureCard = ({ title, text }: FeatureCardProps) => {
   return (
     <div className="flex items-center gap-5 bg-white rounded-full px-8 py-6 shadow-md">
       
