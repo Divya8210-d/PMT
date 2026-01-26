@@ -1,20 +1,9 @@
-import Products from "../../../components/OEMS";
-import ServicesHero from "../../../components/ServicesHero";
+import AboutHero from "../../../components/AboutHero";
+import Team from "../../../components/Team";
 
-
-export default function Services() {
+export default function About() {
     
 
-
-    return(<>
-    
-
-    <ServicesHero/>
-    <Products/>
-
-        
-    
-    </>)
+    return(<><AboutHero/>
+    <Team/></>)
 }
-
-
