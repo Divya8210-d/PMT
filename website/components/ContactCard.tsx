@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MoveUpRight } from 'lucide-react';
+import axios from 'axios';
 
 const ContactForm = () => {
+  const [name,setName]=useState("");
+  const [email,setEmail]=useState("");
+  const [number,setNumber]=useState("");
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/sendmail', {
+        name,
+        email,
+        number
+      });
+      alert("Message sent successfully!");
+      setName("");
+      setEmail("");
+      setNumber("");
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message.");
+    }
+  };
+  
   return (
     // Outer Container (Simulating the dark background from your screenshot)
    <div className="lg:w-3xl md:w-3xl sm:w-2xl mx-auto mt-5 flex items-center justify-center">
@@ -24,7 +47,7 @@ const ContactForm = () => {
         </p>
       </div>
 
-      <form className="space-y-3 flex flex-col">
+      <form className="space-y-3 flex flex-col" onSubmit={handleSubmit}>
 
         <input
           type="text"
@@ -66,6 +89,7 @@ const ContactForm = () => {
     group shadow-md shadow-orange-500/20
     
   "
+ 
 >
   {/* Centered text */}
   <span

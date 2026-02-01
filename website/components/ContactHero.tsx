@@ -3,9 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./ContactCard";
-import { Linkedin, Instagram, X } from "lucide-react";
+import { Linkedin, Instagram, X,Menu } from "lucide-react";
+import { useState } from "react";
+const CloseIcon = () => <X />;
 
 export default function ContactHero() {
+   const [openMenu, setOpenMenu] = useState(false);
   return (
     <section className="relative w-full h-screen overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
@@ -23,11 +26,18 @@ export default function ContactHero() {
       <div className="absolute inset-0 z-20 grid grid-rows-[auto_1fr_auto] px-4 sm:px-6 lg:px-10 py-4 sm:py-6">
         
         {/* TOP BAR */}
-        <div className="grid grid-cols-3 items-center">
-          <div className="text-lg sm:text-xl lg:text-2xl font-semibold tracking-wide">
+        <div
+          className="
+            flex items-center justify-between
+            md:grid md:grid-cols-3 md:items-center
+          "
+        >
+          {/* LOGO */}
+          <div className="text-xl sm:text-xl lg:text-2xl font-semibold tracking-wide">
             Pinnacle
           </div>
 
+          {/* DESKTOP NAV */}
           <nav
             className="
               hidden md:flex justify-center gap-6 lg:gap-10
@@ -38,33 +48,60 @@ export default function ContactHero() {
               shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]
             "
           >
-            <Link href="/" className="font-semibold">Home</Link>
-            <Link href="/products" className="opacity-90">Products</Link>
-            <Link href="/about" className="opacity-90">About</Link>
-            <Link href="/contact" className="opacity-90">Contact Us</Link>
+            <Link href="/" className="font-semibold">
+              Home
+            </Link>
+            <Link href="/oems" className="opacity-90">
+              Services
+            </Link>
+            <Link href="/about" className="opacity-90">
+              About
+            </Link>
+            <Link href="/contact" className="opacity-90">
+              Contact Us
+            </Link>
           </nav>
 
-          <div className="flex justify-end gap-2 sm:gap-4">
-            <Link
-              href="https://www.linkedin.com/company/pinnacle-depth-mine-management-services-pvt-ltd/"
-              className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
+          {/* RIGHT ICONS */}
+          <div className="flex justify-end items-center gap-2 sm:gap-4 md:gap-2">
+            {/* SOCIAL ICONS (Desktop) */}
+            <div className="hidden md:flex gap-2 sm:gap-4">
+              <Link
+                href="https://www.linkedin.com/company/pinnacle-depth-mine-management-services-pvt-ltd/"
+                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
+              >
+                <Linkedin size={18} />
+              </Link>
+              <Link
+                href=""
+                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
+              >
+                <Instagram size={18} />
+              </Link>
+              <Link
+                href=""
+                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
+              >
+                <X size={18} />
+              </Link>
+            </div>
+
+            {/* HAMBURGER (Mobile) */}
+            <button
+              onClick={() => setOpenMenu(true)}
+              className="
+                md:hidden
+                rounded-full p-2
+                bg-black/10
+                shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]
+              "
+              aria-label="Open menu"
             >
-              <Linkedin />
-            </Link>
-            <Link
-              href=""
-              className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
-            >
-              <Instagram />
-            </Link>
-            <Link
-              href=""
-              className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
-            >
-              <X />
-            </Link>
+              <Menu />
+            </button>
           </div>
         </div>
+
 
         {/* CENTER TEXT */}
         <div className="flex flex-col pt-10 sm:pt-18 lg:pt-16 max-w-fit">
@@ -112,6 +149,55 @@ export default function ContactHero() {
 
         </div>
       </div>
+       {openMenu && (
+        <div className="fixed inset-0 z-[999] bg-black/70 backdrop-blur-md md:hidden">
+          <div className="w-full h-full px-6 py-6 flex flex-col">
+            <div className="flex justify-between items-center">
+              <div className="text-xl font-semibold tracking-wide">
+                Pinnacle
+              </div>
+
+              <button
+                onClick={() => setOpenMenu(false)}
+                className="rounded-full p-2 bg-white/10"
+                aria-label="Close menu"
+              >
+                <CloseIcon />
+              </button>
+            </div>
+
+            <div className="mt-10 flex flex-col gap-6 text-lg font-semibold">
+              <Link href="/" onClick={() => setOpenMenu(false)}>
+                Home
+              </Link>
+              <Link href="/oems" onClick={() => setOpenMenu(false)}>
+                Services
+              </Link>
+              <Link href="/about" onClick={() => setOpenMenu(false)}>
+                About
+              </Link>
+              <Link href="/contact" onClick={() => setOpenMenu(false)}>
+                Contact Us
+              </Link>
+            </div>
+
+            <div className="mt-auto flex gap-4 pt-10">
+              <Link
+                href="https://www.linkedin.com/company/pinnacle-depth-mine-management-services-pvt-ltd/"
+                className="rounded-full p-3 bg-white/10"
+              >
+                <Linkedin />
+              </Link>
+              <Link href="" className="rounded-full p-3 bg-white/10">
+                <Instagram />
+              </Link>
+              <Link href="" className="rounded-full p-3 bg-white/10">
+                <X />
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

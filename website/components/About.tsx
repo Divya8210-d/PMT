@@ -14,102 +14,38 @@ export default function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          end: "bottom 20%",
-          scrub: true,
-        },
-      });
+      // Only run complex ScrollTrigger animations on larger screens to improve mobile performance
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches;
 
-      /* ───────── TOP TEXT ───────── */
-      tl.from(".abouttitletext", {
-        x: -60,
-        opacity: 0,
-      });
+      if (isDesktop) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+            end: "bottom 20%",
+            scrub: true,
+          },
+        });
 
-      tl.from(
-        ".abouttext",
-        {
-          x: 60,
-          opacity: 0,
-        },
-        "<"
-      );
-
-      /* ───────── IMAGE FADE ───────── */
-      tl.from(
-        imageWrapperRef.current,
-        {
-          opacity: 0,
-        },
-        "-=0.3"
-      );
-
-      /* ───────── IMAGE SECTION CARDS ───────── */
-      tl.from(
-        ".image-card",
-        {
-          y: 60,
-          opacity: 0,
-          stagger: 0.2,
-        },
-        "-=0.2"
-      );
-
-      /* ───────── SECOND SECTION TITLE ───────── */
-      tl.from(
-        ".choosetitle",
-        {
-          x: -60,
-          opacity: 0,
-        },
-        "-=0.3"
-      );
-
-      tl.from(
-        ".choose",
-        {
-          x: 60,
-          opacity: 0,
-        },
-        "<"
-      );
-
-      /* ───────── LEFT FEATURE CARDS ───────── */
-      tl.from(
-        ".aboutcard",
-        {
-          x: -60,
-          opacity: 0,
-          stagger: 0.2,
-        },
-        "-=0.2"
-      );
-
-      /* ───────── VIDEO INTERNAL CARDS ───────── */
-      tl.from(
-        ".video-card",
-        {
-          y: 60,
-          opacity: 0,
-          stagger: 0.2,
-        },
-        "-=0.2"
-      );
+        tl.from(".abouttitletext", { x: -60, opacity: 0 });
+        tl.from(".abouttext", { x: 60, opacity: 0 }, "<");
+        tl.from(imageWrapperRef.current, { opacity: 0 }, "-=0.3");
+        tl.from(".image-card", { y: 60, opacity: 0, stagger: 0.2 }, "-=0.2");
+        tl.from(".choosetitle", { x: -60, opacity: 0 }, "-=0.3");
+        tl.from(".choose", { x: 60, opacity: 0 }, "<");
+        tl.from(".aboutcard", { x: -60, opacity: 0, stagger: 0.2 }, "-=0.2");
+        tl.from(".video-card", { y: 60, opacity: 0, stagger: 0.2 }, "-=0.2");
+      }
     }, sectionRef);
 
-    /* ───────── VIDEO PLAY / PAUSE ON SCROLL ───────── */
+    // Keep video autoplay trigger on all devices
     ScrollTrigger.create({
       trigger: videoRef.current,
       start: "top bottom",
       end: "bottom top",
       onUpdate: (self) => {
         if (!videoRef.current) return;
-        self.direction === 1
-          ? videoRef.current.play()
-          : videoRef.current.pause();
+        self.direction === 1 ? videoRef.current.play() : videoRef.current.pause();
       },
     });
 
@@ -119,12 +55,12 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="bg-black text-white py-16 px-16 mx-auto space-y-24"
+      className="bg-black text-white w-full overflow-hidden py-10 sm:py-16 md:py-20 px-6 sm:px-10 md:px-16 mx-auto space-y-16 md:space-y-24"
     >
       {/* ───────────────────────── TOP SECTION ───────────────────────── */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-6">
         <div>
-          <h2 className="abouttitletext text-5xl font-extrabold leading-tight">
+          <h2 className="abouttitletext text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
             INNOVATION BUILT FOR <br />
             <span className="underline underline-offset-8 decoration-white">
               REAL-WORLD
@@ -133,12 +69,12 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="flex items-center justify-end text-gray-200">
-          <div className="max-w-sm text-right">
-            <h4 className="abouttext tracking-[0.25em] text-lg font-bold mb-2 uppercase underline underline-offset-8 decoration-white">
+        <div className="flex items-center justify-start md:justify-end text-gray-200">
+          <div className="max-w-md md:max-w-sm text-left md:text-right">
+            <h4 className="abouttext tracking-[0.25em] text-sm sm:text-base md:text-lg font-bold mb-3 uppercase underline underline-offset-8 decoration-white">
               About Us
             </h4>
-            <p className="abouttext text-md">
+            <p className="abouttext text-sm sm:text-base md:text-md leading-relaxed">
               PMT Bharat delivers technology-driven mining solutions and
               consulting services that enhance safety, efficiency, and
               regulatory compliance across India’s mining sector.
@@ -150,33 +86,38 @@ export default function About() {
       {/* ───────────────────────── IMAGE GRID CONTENT ───────────────────────── */}
       <div
         ref={imageWrapperRef}
-        className="relative rounded-3xl w-full min-h-[600px] flex items-center"
+        className="relative rounded-2xl sm:rounded-3xl w-full min-h-[600px] sm:min-h-[500px] md:min-h-[600px] flex flex-col md:block"
       >
         <Image
           src="/About.jpg"
           alt="Mining Machinery"
           fill
           priority
-          className="object-cover object-center rounded-3xl"
+          className="object-cover object-center rounded-2xl sm:rounded-3xl"
         />
 
-        <div className="absolute inset-0 bg-black/20 rounded-3xl"></div>
+        <div className="absolute inset-0 bg-black/40 rounded-2xl sm:rounded-3xl"></div>
 
-        <div className="relative z-10 w-full h-full grid grid-rows-2 gap-28">
-          <div className="flex justify-between items-start gap-6 p-6">
-            <div className="image-card">
+        {/* Content Overlay */}
+        <div className="relative z-10 w-full h-full flex flex-col justify-between p-4 sm:p-6 md:p-8 gap-6">
+          {/* Top Row: Card + Title */}
+          <div className="flex flex-col md:flex-row justify-between items-start gap-4">
+            <div className="image-card w-full md:w-auto">
               <Card title="VISION">
                 To develop a safe, efficient, and future-ready mining ecosystem
                 in India by combining modern technology and strong industry
                 partnerships that support long-term growth.
               </Card>
             </div>
-
-            <div className="text-[24px] font-bold">PINNACLE</div>
+            {/* Desktop: Title Top Right, Mobile: Hidden or moved */}
+            <div className="hidden md:block text-2xl font-bold tracking-widest">
+              PINNACLE
+            </div>
           </div>
 
-          <div className="flex justify-between items-end gap-6 p-6">
-            <div className="image-card">
+          {/* Bottom Row: Two Cards */}
+          <div className="flex flex-col md:flex-row justify-between items-end gap-4 w-full">
+            <div className="image-card w-full md:w-auto">
               <Card title="THE MISSION">
                 To enable mining organizations with reliable technology, safety
                 solutions, and expert guidance that improve efficiency,
@@ -184,7 +125,7 @@ export default function About() {
               </Card>
             </div>
 
-            <div className="image-card">
+            <div className="image-card w-full md:w-auto">
               <Card title="OUR VALUE">
                 We are guided by safety-first thinking, integrity in every
                 engagement, practical innovation, and a long-term commitment to
@@ -196,21 +137,22 @@ export default function About() {
       </div>
 
       {/* ───────────────────────── SECOND SECTION ───────────────────────── */}
-      <div className="space-y-14">
-        <div className="grid md:grid-cols-2 gap-10">
+      <div className="space-y-10 md:space-y-14">
+        {/* Header */}
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10">
           <div>
-            <h2 className="choosetitle text-5xl font-bold leading-tight">
+            <h2 className="choosetitle text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               WHAT SETS <br /> US APART
             </h2>
-            <div className="w-16 h-[4px] bg-white mt-4"></div>
+            <div className="w-16 h-[3px] sm:h-[4px] bg-white mt-4"></div>
           </div>
 
-          <div className="flex items-center justify-end">
-            <div className="max-w-sm text-right">
-              <h4 className="choose uppercase text-lg tracking-[0.25em] font-bold mb-2 underline underline-offset-8 decoration-white">
+          <div className="flex items-center justify-start md:justify-end">
+            <div className="max-w-md md:max-w-sm text-left md:text-right">
+              <h4 className="choose uppercase text-xs sm:text-sm font-bold mb-2 underline underline-offset-8 decoration-white tracking-[0.2em]">
                 why choose us
               </h4>
-              <p className="choose text-gray-300 text-md">
+              <p className="choose text-gray-300 text-sm sm:text-base leading-relaxed">
                 Our approach blends modern technology with hands-on experience to
                 deliver measurable operational and safety outcomes tailored for
                 India’s mining sector.
@@ -219,10 +161,12 @@ export default function About() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 w-full">
-          <div className="aboutcard w-full md:w-[500px] space-y-10 flex-shrink-0">
+        {/* Features + Video */}
+        <div className="flex flex-col lg:flex-row gap-10 w-full">
+          {/* Left Features */}
+          <div className="aboutcard w-full lg:w-[450px] space-y-8 flex-shrink-0">
             <FeatureCard title="INDUSTRY-FOCUSED EXPERTISE">
-              We bring deep understanding of India’s mining conditions with
+              We bring deep understanding of India's mining conditions with
               on-ground experience, delivering practical solutions that work in
               real operations.
             </FeatureCard>
@@ -234,7 +178,8 @@ export default function About() {
             </FeatureCard>
           </div>
 
-          <div className="flex-1 relative rounded-4xl overflow-hidden min-h-[450px]">
+          {/* Right Video Section */}
+          <div className="flex-1 relative rounded-2xl sm:rounded-3xl lg:rounded-4xl overflow-hidden min-h-[500px] md:min-h-[450px]">
             <video
               ref={videoRef}
               autoPlay
@@ -247,25 +192,27 @@ export default function About() {
 
             <div className="absolute inset-0 bg-black/30"></div>
 
-            <div className="relative z-10 grid grid-rows-2 w-full h-full">
-              <div className="flex items-start video-card">
-                <div className="bg-black rounded-br-4xl px-6 py-8 w-[58%]">
-                  <h3 className="text-xl font-bold mb-2">
+            <div className="relative z-10 w-full h-full flex flex-col justify-between p-4 sm:p-6 gap-4">
+              {/* Top Card */}
+              <div className="video-card flex justify-start">
+                <div className="bg-black/90 backdrop-blur-md rounded-br-3xl md:rounded-br-4xl p-6 sm:p-8 w-full sm:w-[85%] md:w-[60%] border-l-4 border-white">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">
                     SAFETY-DRIVEN ARCHITECTURE
                   </h3>
-                  <p className="text-xl text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                     Safety is central to every solution we build — aligned with
                     Indian regulatory standards and global benchmarks.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-end justify-end video-card">
-                <div className="bg-black rounded-tl-4xl px-6 py-8 w-[58%]">
-                  <h3 className="text-xl font-bold mb-2">
+              {/* Bottom Card */}
+              <div className="video-card flex justify-end">
+                <div className="bg-black/90 backdrop-blur-md rounded-tl-3xl md:rounded-tl-4xl p-6 sm:p-8 w-full sm:w-[85%] md:w-[60%] border-r-4 border-white text-right">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">
                     TRUSTED PARTNERSHIP MODEL
                   </h3>
-                  <p className="text-xl text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                     We work as long-term partners, offering transparent
                     engagement, reliable support, and long-lasting mining
                     technology collaboration.
@@ -289,12 +236,21 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-white/5 p-10 rounded-2xl w-[360px] backdrop-blur-sm">
+    <div className="bg-white/10 p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl w-full md:max-w-[360px] backdrop-blur-md border border-white/10 hover:bg-white/15 transition-colors">
       <div className="flex items-center gap-3 mb-3">
-        <Image src="/VISION ICON.png" alt="icon" width={28} height={28} />
-        <h3 className="text-xl font-bold">{title}</h3>
+        <div className="w-6 h-6 sm:w-7 sm:h-7 relative flex-shrink-0">
+           <Image 
+             src="/VISION ICON.png" 
+             alt="icon" 
+             fill
+             className="object-contain"
+           />
+        </div>
+        <h3 className="text-base sm:text-lg font-bold text-white">{title}</h3>
       </div>
-      <p className="text-sm text-gray-200">{children}</p>
+      <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
+        {children}
+      </p>
     </div>
   );
 }
@@ -308,12 +264,21 @@ function FeatureCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="max-w-md">
+    <div className="w-full">
       <div className="flex items-center gap-3 mb-3">
-        <Image src="/VISION ICON.png" alt="icon" width={28} height={28} />
-        <h3 className="text-xl font-bold">{title}</h3>
+        <div className="w-6 h-6 sm:w-7 sm:h-7 relative flex-shrink-0">
+           <Image 
+             src="/VISION ICON.png" 
+             alt="icon" 
+             fill
+             className="object-contain"
+           />
+        </div>
+        <h3 className="text-lg sm:text-xl font-bold text-white">{title}</h3>
       </div>
-      <p className="text-xl text-gray-300 leading-relaxed">{children}</p>
+      <p className="text-sm sm:text-base text-gray-300 leading-relaxed border-l-2 border-white/30 pl-4">
+        {children}
+      </p>
     </div>
   );
 }

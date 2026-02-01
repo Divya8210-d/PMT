@@ -32,22 +32,22 @@ const service2=[
 
 function Products() {
   return (
-    <section className="bg-black relative z-50 w-full  py-20">
+    <section className="bg-black relative z-50 w-full py-8 sm:py-12 md:py-16 lg:py-20">
       
       {/* Header Section */}
-      <div className="grid md:grid-cols-2 gap-10 mb-20 px-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-12 sm:mb-16 md:mb-20 px-4 sm:px-8 md:px-12 lg:px-16">
         <div>
-          <h2 className="text-5xl font-extrabold leading-tight text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
         <span className="text-orange-500">  01 </span>  Services for OEMs & Technology Providers
           </h2>
         </div>
 
-        <div className="flex items-center justify-end text-gray-200">
-          <div className="max-w-sm text-right">
-            <h4 className="tracking-[0.25em] text-lg font-bold mb-2 uppercase underline underline-offset-8 decoration-white">
+        <div className="flex items-center justify-start md:justify-end text-gray-200">
+          <div className="max-w-xs md:max-w-sm text-left md:text-right">
+            <h4 className="tracking-[0.2em] sm:tracking-[0.25em] text-xs sm:text-sm font-bold mb-2 uppercase underline underline-offset-8 decoration-white">
               OEM SERVICES
             </h4>
-            <p className="text-md">
+            <p className="text-xs sm:text-sm md:text-base">
              PMT – Pinnacle Mining Technology Pvt. Ltd.
 provides Faster India entry, reduced regulatory and performance risk, and protected brand reputation.
             </p>
@@ -56,7 +56,7 @@ provides Faster India entry, reduced regulatory and performance risk, and protec
       </div>
 
       {/* Cards Section */}
-      <div className="space-y-24">
+      <div className="space-y-12 sm:space-y-16 md:space-y-24">
         {services.map((service, idx) => {
           return (
             <div key={idx} className="relative z-50">
@@ -78,19 +78,19 @@ provides Faster India entry, reduced regulatory and performance risk, and protec
         })}
       </div>
 
-       <div className="grid md:grid-cols-2 gap-10 mb-20 px-10">
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-12 sm:mb-16 md:mb-20 px-4 sm:px-8 md:px-12 lg:px-16">
         <div>
-          <h2 className="text-5xl font-extrabold leading-tight text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
               <span className="text-orange-500">  02 </span> Services for Mine Owners & Operators
           </h2>
         </div>
 
-        <div className="flex items-center justify-end text-gray-200">
-          <div className="max-w-sm text-right">
-            <h4 className="tracking-[0.25em] text-lg font-bold mb-2 uppercase underline underline-offset-8 decoration-white">
+        <div className="flex items-center justify-start md:justify-end text-gray-200">
+          <div className="max-w-xs md:max-w-sm text-left md:text-right">
+            <h4 className="tracking-[0.2em] sm:tracking-[0.25em] text-xs sm:text-sm font-bold mb-2 uppercase underline underline-offset-8 decoration-white">
               Services for Mine Owners
             </h4>
-            <p className="text-md">
+            <p className="text-xs sm:text-sm md:text-base">
               PMT – Pinnacle Mining Technology Pvt. Ltd.
 provides higher productivity, safer operations, and lower lifecycle cost per tonne.
             </p>
@@ -99,7 +99,7 @@ provides higher productivity, safer operations, and lower lifecycle cost per ton
       </div>
 
       {/* Cards Section */}
-      <div className="space-y-24">
+      <div className="space-y-12 sm:space-y-16 md:space-y-24">
         {service2.map((service, idx) => {
           return (
             <div key={idx} className="relative z-50">
