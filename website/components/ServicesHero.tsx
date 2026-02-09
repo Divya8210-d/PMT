@@ -75,23 +75,14 @@ export default function ServicesHero() {
           <div className="flex justify-end items-center gap-2 sm:gap-4 md:gap-2">
             {/* SOCIAL ICONS (Desktop) */}
             <div className="hidden md:flex gap-2 sm:gap-4">
-              <Link
-                href="https://www.linkedin.com/company/pinnacle-depth-mine-management-services-pvt-ltd/"
-                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
+               <Link
+                href="https://www.linkedin.com/company/pmt-bharat/?viewAsMember=true"
+                className="rounded-full p-3 bg-white/10"
               >
-                <Linkedin size={18} />
+                <Linkedin />
               </Link>
-              <Link
-                href=""
-                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
-              >
-                <Instagram size={18} />
-              </Link>
-              <Link
-                href=""
-                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
-              >
-                <X size={18} />
+              <Link href="https://www.instagram.com/pmt_bharat/" className="rounded-full p-3 bg-white/10">
+                <Instagram />
               </Link>
             </div>
               <button
@@ -177,9 +168,9 @@ export default function ServicesHero() {
               justify-start md:justify-end
             "
           >
-            <StatCard value="10+" title="TECHNOLOGIES" text="To become India’s most trusted" />
-            <StatCard value="10+" title="TECHNOLOGIES" text="To become India’s most trusted" />
-            <StatCard value="10+" title="TECHNOLOGIES" text="To become India’s most trusted" />
+            <StatCard value="180+" title="TECHNOLOGIES" text="To become India’s most trusted" />
+            <StatCard value="10+" title="COUNTRIES" text="To become India’s most trusted" />
+            
           </div>
         </div>
       </div>

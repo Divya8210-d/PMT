@@ -12,7 +12,7 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/contact', {
+      await axios.post('https://pmt-w7bi.onrender.com/contact', {
         name,
         email,
         number: `${countryCode} ${number}`
@@ -29,27 +29,27 @@ const ContactForm = () => {
 
   return (
     // Outer Container (Simulating the dark background from your screenshot)
-    <div className="lg:w-3xl md:w-3xl sm:w-2xl mx-auto mt-5 flex items-center justify-center">
+    <div className="w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-3xl mx-auto mt-5 flex items-center justify-center px-4 sm:px-0">
 
       {/* Main Card */}
-      <div className="w-lg p-4 bg-black/20 backdrop-blur-md border border-white/20 
+      <div className="w-full p-4 bg-black/20 backdrop-blur-md border border-white/20 
                   rounded-2xl shadow-xl
-                  px-8 py-6 md:px-10 md:py-6
-                  flex flex-col md:flex-row gap-10
+                  px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6
+                  flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10
                   overflow-hidden relative">
 
         {/* Left Side: Form */}
         <div className="flex-1 z-10 flex flex-col justify-center">
-          <div className="mb-4">
-            <h2 className="text-3xl font-bold text-white mb-1">
+          <div className="mb-3 sm:mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
               GET IN <span className="text-orange-500">TOUCH</span>
             </h2>
-            <p className="text-gray-300 text-sm font-light">
+            <p className="text-gray-300 text-xs sm:text-sm font-light">
               PMT Bharat brings together expertise in mining
             </p>
           </div>
 
-          <form className="space-y-3 flex flex-col" onSubmit={handleSubmit}>
+          <form className="space-y-2 sm:space-y-3 flex flex-col" onSubmit={handleSubmit}>
 
             <input
               type="text"
@@ -57,7 +57,7 @@ const ContactForm = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full bg-transparent border border-gray-500/50 rounded-full
-                     py-2.5 px-5 text-sm text-white placeholder-gray-400
+                     py-2 sm:py-2.5 px-4 sm:px-5 text-xs sm:text-sm text-white placeholder-gray-400
                      focus:outline-none focus:border-orange-500"
             />
 
@@ -67,26 +67,27 @@ const ContactForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-transparent border border-gray-500/50 rounded-full
-                     py-2.5 px-5 text-sm text-white placeholder-gray-400
+                     py-2 sm:py-2.5 px-4 sm:px-5 text-xs sm:text-sm text-white placeholder-gray-400
                      focus:outline-none focus:border-orange-500"
             />
 
-            <div className='flex w-full gap-3'> <input
-              type="text"
-              placeholder="Country Code"
-              value={countryCode}
-              onChange={(e) => setCountryCode(e.target.value)}
-              className="max-w-xs bg-transparent border border-gray-500/50 rounded-full
-                     py-2.5 px-5 text-sm text-white placeholder-gray-400
+            <div className='flex flex-col sm:flex-row w-full gap-2 sm:gap-3'>
+              <input
+                type="text"
+                placeholder="Country Code"
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                className="w-full sm:w-auto sm:max-w-[120px] md:max-w-xs bg-transparent border border-gray-500/50 rounded-full
+                     py-2 sm:py-2.5 px-4 sm:px-5 text-xs sm:text-sm text-white placeholder-gray-400
                      focus:outline-none focus:border-orange-500"
-            />
+              />
               <input
                 type="tel"
                 placeholder="Phone No."
                 value={number}
                 onChange={(e) => setNumber(e.target.value)}
-                className="max-w-xs bg-transparent border border-gray-500/50 rounded-full
-                     py-2.5 px-5 text-sm text-white placeholder-gray-400
+                className="w-full sm:flex-1 sm:max-w-xs bg-transparent border border-gray-500/50 rounded-full
+                     py-2 sm:py-2.5 px-4 sm:px-5 text-xs sm:text-sm text-white placeholder-gray-400
                      focus:outline-none focus:border-orange-500"
               />
             </div>

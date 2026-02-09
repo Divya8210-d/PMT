@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Instagram, X ,Menu } from "lucide-react";
+import { Linkedin, Instagram, X, Menu } from "lucide-react";
 import { useState } from "react";
 const CloseIcon = () => <X />;
 
 export default function AboutHero() {
-    const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
-    <section className="relative w-full h-screen overflow-hidden text-white">
+    <section className="relative w-full min-h-screen overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
       <Image
         src="/About.png"
@@ -23,9 +23,9 @@ export default function AboutHero() {
 
       {/* MAIN GRID */}
       <div className="absolute inset-0 z-20 grid grid-rows-[auto_1fr_auto] px-4 sm:px-6 lg:px-10 py-4 sm:py-6">
-        
+
         {/* TOP BAR */}
-       <div
+        <div
           className="
             flex items-center justify-between
             md:grid md:grid-cols-3 md:items-center
@@ -66,22 +66,13 @@ export default function AboutHero() {
             {/* SOCIAL ICONS (Desktop) */}
             <div className="hidden md:flex gap-2 sm:gap-4">
               <Link
-                href="https://www.linkedin.com/company/pinnacle-depth-mine-management-services-pvt-ltd/"
-                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
+                href="https://www.linkedin.com/company/pmt-bharat/?viewAsMember=true"
+                className="rounded-full p-3 bg-white/10"
               >
-                <Linkedin size={18} />
+                <Linkedin />
               </Link>
-              <Link
-                href=""
-                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
-              >
-                <Instagram size={18} />
-              </Link>
-              <Link
-                href=""
-                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
-              >
-                <X size={18} />
+              <Link href="https://www.instagram.com/pmt_bharat/" className="rounded-full p-3 bg-white/10">
+                <Instagram />
               </Link>
             </div>
 
@@ -129,7 +120,7 @@ export default function AboutHero() {
 
         {/* BOTTOM GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 items-end gap-6 sm:gap-8 md:gap-0 pb-2 sm:pb-4 lg:pb-6">
-          
+
           {/* LEFT */}
           <div className="flex flex-col gap-2 sm:gap-3 md:gap-4">
             <h3 className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-semibold uppercase max-w-[530px] leading-tight">
@@ -146,7 +137,7 @@ export default function AboutHero() {
           <div className="flex flex-col" />
         </div>
       </div>
-       {openMenu && (
+      {openMenu && (
         <div className="fixed inset-0 z-[999] bg-black/70 backdrop-blur-md md:hidden">
           <div className="w-full h-full px-6 py-6 flex flex-col">
             <div className="flex justify-between items-center">
@@ -180,16 +171,13 @@ export default function AboutHero() {
 
             <div className="mt-auto flex gap-4 pt-10">
               <Link
-                href="https://www.linkedin.com/company/pinnacle-depth-mine-management-services-pvt-ltd/"
+                href="https://www.linkedin.com/company/pmt-bharat/?viewAsMember=true"
                 className="rounded-full p-3 bg-white/10"
               >
                 <Linkedin />
               </Link>
-              <Link href="" className="rounded-full p-3 bg-white/10">
+              <Link href="https://www.instagram.com/pmt_bharat/" className="rounded-full p-3 bg-white/10">
                 <Instagram />
-              </Link>
-              <Link href="" className="rounded-full p-3 bg-white/10">
-                <X />
               </Link>
             </div>
           </div>
