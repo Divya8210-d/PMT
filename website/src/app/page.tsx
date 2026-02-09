@@ -8,13 +8,13 @@ import Updates from "../../components/Updates";
 
 export default function Home() {
   return (
-   <>
-  <Hero/>
-  <About/>
-  <Services/>
-  <Approvals/>
-  <Networks/>
-  <Updates/>
+    <>
+      <Hero />
+      <About />
+      <Services />
+      <Approvals />
+      <Networks />
+      {/* <Updates/> */}
     </>
   );
 }

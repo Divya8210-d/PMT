@@ -15,7 +15,7 @@ export default function HeroSection() {
     <section className="relative w-full h-auto md:h-screen overflow-hidden text-white">
       {/* BACKGROUND VIDEO */}
       <video
-        src="/herovideo.mp4" 
+        src="/herovideo.mp4"
         autoPlay
         loop
         muted
@@ -78,22 +78,16 @@ export default function HeroSection() {
             {/* SOCIAL ICONS (Desktop) */}
             <div className="hidden md:flex gap-2 sm:gap-4">
               <Link
-                href="https://www.linkedin.com/company/pinnacle-depth-mine-management-services-pvt-ltd/"
+                href="https://www.linkedin.com/company/pmt-bharat/?viewAsMember=true"
                 className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
               >
                 <Linkedin size={18} />
               </Link>
               <Link
-                href=""
+                href="https://www.instagram.com/pmt_bharat/"
                 className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
               >
                 <Instagram size={18} />
-              </Link>
-              <Link
-                href=""
-                className="rounded-full p-2 bg-black/10 shadow-[inset_0_0_6px_rgba(255,255,255,0.25)]"
-              >
-                <X size={18} />
               </Link>
             </div>
 
@@ -189,7 +183,7 @@ export default function HeroSection() {
             >
               Explore Services
               <Image
-                src="/iconhero.png" 
+                src="/iconhero.png"
                 alt="icon"
                 width={16}
                 height={16}
@@ -209,9 +203,7 @@ export default function HeroSection() {
             />
           </div>
 
-          {/* RIGHT BADGES */}
           <div className="flex flex-col gap-3 md:gap-4 items-start md:items-end order-3">
-            <Badge text="Authorised Service Provider for OEM in India" />
             <Badge text="Authorised Service Provider for OEM in India" />
           </div>
         </div>
@@ -252,16 +244,13 @@ export default function HeroSection() {
 
             <div className="mt-auto flex gap-4 pt-10">
               <Link
-                href="https://www.linkedin.com/company/pinnacle-depth-mine-management-services-pvt-ltd/"
+                href="https://www.linkedin.com/company/pmt-bharat/?viewAsMember=true"
                 className="rounded-full p-3 bg-white/10"
               >
                 <Linkedin />
               </Link>
-              <Link href="" className="rounded-full p-3 bg-white/10">
+              <Link href="https://www.instagram.com/pmt_bharat/" className="rounded-full p-3 bg-white/10">
                 <Instagram />
-              </Link>
-              <Link href="" className="rounded-full p-3 bg-white/10">
-                <X />
               </Link>
             </div>
           </div>
