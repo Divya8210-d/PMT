@@ -11,10 +11,10 @@ app.use(cors())
 
 app.use(express.json());
 
-app.post("/contact", (req, res) => {
+app.post("/contact", async (req, res) => {
     const { name, email, number } = req.body;
     try {
-        sendmail(name, email, number);
+        await sendmail(name, email, number);
         res.status(200).send("Email sent successfully");
     } catch (error) {
         res.status(500).send("Error sending email");
