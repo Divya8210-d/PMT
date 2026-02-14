@@ -186,7 +186,7 @@ export default function About() {
               loop
               muted
               playsInline
-              src="/whychoose.mp4"
+              src="/whychooseus.mp4"
               className="absolute inset-0 w-full h-full object-cover"
             />
 
