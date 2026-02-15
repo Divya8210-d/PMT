@@ -12,7 +12,7 @@ export default function AboutHero() {
     <section className="relative w-full min-h-screen overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
       <Image
-        src="/About.png"
+        src="https://res.cloudinary.com/dad2siqxd/image/upload/v1771151278/About_hl93xm.png"
         alt="Service Hero Image"
         fill
         priority

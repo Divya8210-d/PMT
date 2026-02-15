@@ -13,7 +13,7 @@ export default function ServicesHero() {
     <section className="relative w-full h-auto md:h-screen overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
       <Image
-        src="/Services.png"
+        src="https://res.cloudinary.com/dad2siqxd/image/upload/v1771151281/Services_vasera.png"
         alt="Service Hero Image"
         fill
         priority

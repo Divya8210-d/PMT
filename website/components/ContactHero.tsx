@@ -13,7 +13,7 @@ export default function ContactHero() {
     <section className="relative w-full h-screen overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
       <Image
-        src="/Contact.png"
+        src="https://res.cloudinary.com/dad2siqxd/image/upload/v1771151279/Contact_jvbxrf.png"
         alt="Service Hero Image"
         fill
         priority
@@ -132,7 +132,7 @@ export default function ContactHero() {
 
           {/* RIGHT (empty for now) */}
           <div className="flex flex-col gap-4" >
-             <Badge text="Email" detail="pinnacledepth@gmail.com"/>
+             <Badge text="Email" detail="office@pmtbharat.com"/>
          <Badge text="Phone" detail="+91 6200224594"/>
           </div>
         

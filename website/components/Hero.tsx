@@ -15,13 +15,14 @@ export default function HeroSection() {
     <section className="relative w-full h-auto md:h-screen overflow-hidden text-white">
       {/* BACKGROUND VIDEO */}
       <video
-        src="/herovideo.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+  src="https://res.cloudinary.com/dad2siqxd/video/upload/herovideo_mafjdf.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
 
       <div className="absolute inset-0 bg-black/40 z-10" />
 

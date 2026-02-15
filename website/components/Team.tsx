@@ -76,7 +76,7 @@ export default function Team() {
       {/* LARGE IMAGE */}
       <div className="relative rounded-2xl sm:rounded-3xl w-full min-h-[350px] sm:min-h-[450px] md:min-h-[600px] flex items-center mt-8 sm:mt-10 md:mt-12 lg:mt-16 mb-16 sm:mb-20 md:mb-24">
         <Image
-          src="/aboutteam.png"
+          src="https://res.cloudinary.com/dad2siqxd/image/upload/v1771151279/aboutteam_ixpxe0.png"
           alt="Mining Machinery"
           fill
           priority

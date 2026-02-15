@@ -89,7 +89,7 @@ export default function About() {
         className="relative rounded-2xl sm:rounded-3xl w-full min-h-[600px] sm:min-h-[500px] md:min-h-[600px] flex flex-col md:block"
       >
         <Image
-          src="/About.jpg"
+          src="https://res.cloudinary.com/dad2siqxd/image/upload/v1771151280/About_vtzs6f.jpg"
           alt="Mining Machinery"
           fill
           priority
@@ -186,7 +186,7 @@ export default function About() {
               loop
               muted
               playsInline
-              src="/whychooseus.mp4"
+              src="https://res.cloudinary.com/dad2siqxd/video/upload/whychooseus_wbm7cv.mp4"
               className="absolute inset-0 w-full h-full object-cover"
             />
 
