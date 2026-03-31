@@ -16,13 +16,13 @@ const TeamCard: React.FC<TeamCardProps> = ({
     linkedinUrl,
 }) => {
     return (
-        <div className="relative group w-full h-[450px] sm:h-[500px] overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800">
+        <div className="relative group w-full h-[450px] sm:h-[390px] overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800">
             {/* BACKGROUND IMAGE */}
             <Image
                 src={imageSrc}
                 alt={name}
                 fill
-                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                className="h-full  object-center  transition-transform duration-500 group-hover:scale-105"
             />
 
             {/* OVERLAY - Gradient from bottom */}

@@ -14,7 +14,7 @@ export default function Home() {
       <Services />
       <Approvals />
       <Networks />
-      {/* <Updates/> */}
+       <Updates/> 
     </>
   );
 }

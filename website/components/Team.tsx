@@ -5,7 +5,7 @@ const FOUNDERS = [
   {
     name: "SANTU KUMAR",
     role: "HEAD OF OPERATION",
-    imageSrc: "/aboutteam.png",
+    imageSrc: "/santu.jpeg",
     linkedinUrl: "https://www.linkedin.com/in/santu-kumar-santu-047abb19b/",
   },
 
