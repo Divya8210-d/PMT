@@ -21,40 +21,40 @@ const FOUNDERS = [
 const TEAM_MEMBERS = [
   {
     name: "DIVYANSHU CHOUBEY",
-    role: "FULL STACK DEVELOPER ",
-    imageSrc: "/aboutteam.png",
+    role: "MARKETING HEAD ",
+    imageSrc: "/divyanshu.jpeg",
    
-    description: "Specializes in building robust and scalable full-stack web applications.",
+   
   },
   {
     name: "HIYANSHU GUPTA",
-    role: "UI/UX DESIGNER",
-    imageSrc: "/aboutteam.png",
+    role: "SYSTEM ENGINEER",
+    imageSrc: "/hiyanshu.png",
    
-    description: "Crafting intuitive and visually stunning user experiences.",
+
   },
   {
     name: "ALOK KUMAR",
     role: "APP DEVELOPER",
-    imageSrc: "/aboutteam.png",
+    imageSrc: "/alok.jpeg",
   
-    description: "Developing seamless and efficient mobile applications.",
+    
   },
   {
     name: "JINAY JAIN",
     role: "ROBOTICS DOMAIN INTERN",
-    imageSrc: "/aboutteam.png",
+    imageSrc: "/jinay.png",
     
-    description: "Innovating solutions within the robotics and automation domain.",
+    
   },
 ];
 const BUSINESS_DEVELOPMENT_TEAM = [
   {
     name: "SIDDHI SEN",
     role: "BUSINESS DEVELOPMENT INTERN",
-    imageSrc: "/aboutteam.png",
+    imageSrc: "/siddhi.jpeg",
     
-    description: "Assisting in strategic partnerships and market expansion.",
+   
   },
 ];
 
@@ -139,7 +139,7 @@ export default function Team() {
             role={member.role}
             imageSrc={member.imageSrc}
           
-            description={member.description}
+           
           />
         ))}
       </div>
@@ -163,7 +163,7 @@ export default function Team() {
             role={member.role}
             imageSrc={member.imageSrc}
            
-            description={member.description}
+            
           />
         ))}
       </div>
