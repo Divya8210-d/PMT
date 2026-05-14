@@ -7,6 +7,7 @@ interface TeamCardProps {
     role: string;
     imageSrc: string;
     linkedinUrl?: string;
+    description?: string;
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({
@@ -14,6 +15,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
     role,
     imageSrc,
     linkedinUrl,
+    description,
 }) => {
     return (
         <div className="relative group w-full h-[450px] sm:h-[390px] overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800">
@@ -33,9 +35,14 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 <h3 className="text-orange-500 text-xl sm:text-2xl font-bold uppercase mb-1">
                     {name}
                 </h3>
-                <p className="text-gray-300 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6">
+                <p className="text-gray-300 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-2">
                     {role}
                 </p>
+                {description && (
+                    <p className="text-gray-200 text-xs sm:text-sm mb-4 line-clamp-3">
+                        {description}
+                    </p>
+                )}
 
                 {/* SOCIAL ICONS */}
                 <div className="flex gap-4">

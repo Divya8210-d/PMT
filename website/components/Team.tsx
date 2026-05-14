@@ -3,10 +3,18 @@ import TeamCard from "./TeamCard";
 
 const FOUNDERS = [
   {
-    name: "SANTU KUMAR",
-    role: "HEAD OF OPERATION",
-    imageSrc: "/santu.jpeg",
-    linkedinUrl: "https://www.linkedin.com/in/santu-kumar-santu-047abb19b/",
+    name: "Mr. Akhshat Sri Mohan",
+    role: "CEO",
+    imageSrc: "/AKSHAT.jpeg",
+   
+    description: "Visionary Leader with 10+ years of vast experience in Fiber Network & Software Planning — pioneering digital transformation in the energy sector.",
+  },
+  {
+    name: "Mr. Mrigendra R. Tripathi",
+    role: "CBDO",
+    imageSrc: "/TRIPATHI.jpeg",
+   
+    description: "Expert in Strategy & Business Development — orchestrating TerraForge's global expansion, partnerships, and market penetration across emerging industrial economies.",
   },
 
 ];
@@ -15,25 +23,29 @@ const TEAM_MEMBERS = [
     name: "DIVYANSHU CHOUBEY",
     role: "FULL STACK DEVELOPER ",
     imageSrc: "/aboutteam.png",
-    linkedinUrl: "https://www.linkedin.com/in/divyanshu8210/",
+   
+    description: "Specializes in building robust and scalable full-stack web applications.",
   },
   {
     name: "HIYANSHU GUPTA",
     role: "UI/UX DESIGNER",
     imageSrc: "/aboutteam.png",
-    linkedinUrl: "https://www.linkedin.com/in/hiyanshu-gupta-9b33aa320/",
+   
+    description: "Crafting intuitive and visually stunning user experiences.",
   },
   {
     name: "ALOK KUMAR",
     role: "APP DEVELOPER",
     imageSrc: "/aboutteam.png",
-    linkedinUrl: "https://www.linkedin.com/in/alok-kumar-3953a1321/",
+  
+    description: "Developing seamless and efficient mobile applications.",
   },
   {
     name: "JINAY JAIN",
     role: "ROBOTICS DOMAIN INTERN",
     imageSrc: "/aboutteam.png",
-    linkedinUrl: "https://www.linkedin.com/in/jinay-jain-/",
+    
+    description: "Innovating solutions within the robotics and automation domain.",
   },
 ];
 const BUSINESS_DEVELOPMENT_TEAM = [
@@ -41,7 +53,8 @@ const BUSINESS_DEVELOPMENT_TEAM = [
     name: "SIDDHI SEN",
     role: "BUSINESS DEVELOPMENT INTERN",
     imageSrc: "/aboutteam.png",
-    linkedinUrl: "https://www.linkedin.com/in/siddhisen/",
+    
+    description: "Assisting in strategic partnerships and market expansion.",
   },
 ];
 
@@ -103,6 +116,7 @@ export default function Team() {
             role={member.role}
             imageSrc={member.imageSrc}
             linkedinUrl={member.linkedinUrl}
+            description={member.description}
           />
         ))}
       </div>
@@ -125,6 +139,7 @@ export default function Team() {
             role={member.role}
             imageSrc={member.imageSrc}
             linkedinUrl={member.linkedinUrl}
+            description={member.description}
           />
         ))}
       </div>
@@ -148,6 +163,7 @@ export default function Team() {
             role={member.role}
             imageSrc={member.imageSrc}
             linkedinUrl={member.linkedinUrl}
+            description={member.description}
           />
         ))}
       </div>
