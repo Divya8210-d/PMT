@@ -115,7 +115,7 @@ export default function Team() {
             name={member.name}
             role={member.role}
             imageSrc={member.imageSrc}
-            linkedinUrl={member.linkedinUrl}
+  
             description={member.description}
           />
         ))}
@@ -138,7 +138,7 @@ export default function Team() {
             name={member.name}
             role={member.role}
             imageSrc={member.imageSrc}
-            linkedinUrl={member.linkedinUrl}
+          
             description={member.description}
           />
         ))}
@@ -162,7 +162,7 @@ export default function Team() {
             name={member.name}
             role={member.role}
             imageSrc={member.imageSrc}
-            linkedinUrl={member.linkedinUrl}
+           
             description={member.description}
           />
         ))}
